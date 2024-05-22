@@ -13,7 +13,7 @@ import java.sql.Date;
 @NoArgsConstructor
 public class ExperienceDto {
 
-    private Long id;
+    private Long exp_id;
     private String name;
     private String value;
     private Date date;
