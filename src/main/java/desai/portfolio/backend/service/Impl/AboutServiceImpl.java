@@ -56,14 +56,15 @@ public class AboutServiceImpl implements AboutService {
 
     @Override
     public AboutDto updateAbout(AboutDto aboutDto, Long id) {
-
+        LocalDate currentDate = LocalDate.now();
+        Date now= Date.valueOf(currentDate);
         About about = aboutRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("About not found with ID : "+ id));
         about.setName(aboutDto.getName());
         about.setImage(aboutDto.getImage());
         about.setProfession_description(aboutDto.getProfession_description());
         about.setMotivation_description(aboutDto.getMotivation_description());
-
+        about.setDate(now);
         About updateAbout = aboutRepository.save(about);
 
         return modelMapper.map(updateAbout, AboutDto.class);
