@@ -1,18 +1,16 @@
 package desai.portfolio.backend.service;
 
-import desai.portfolio.backend.entity.SkillValue;
+import desai.portfolio.backend.dto.SkillValueDto;
+import desai.portfolio.backend.entity.SubSkillType;
 
 import java.util.List;
 
-public interface SkillValueService {
+public interface SkillValueService{
 
-    SkillValue saveValue(SkillValue value);
+    SkillValueDto addValue(SkillValueDto skillvalueDto);
 
-    SkillValue updateValue(Long id, SkillValue value);
+    SkillValueDto updateValue(SkillValueDto skillvalueDto, Long id);
 
-    SkillValue getValueById(Long id);
+    SkillValueDto getValue(Long id);
 
-    void deleteValue(Long id);
-
-    List<SkillValue> getAllValues();
 }

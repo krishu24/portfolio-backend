@@ -14,7 +14,7 @@ import java.sql.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "skill_value")
-public class SkillValue {
+public class SkillValue extends SubSkillType{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

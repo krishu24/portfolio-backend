@@ -1,11 +1,8 @@
 package desai.portfolio.backend.service.Impl;
 
-import desai.portfolio.backend.dto.SkillDto;
 import desai.portfolio.backend.dto.SubSkillDto;
-import desai.portfolio.backend.entity.Skill;
 import desai.portfolio.backend.entity.SubSkill;
 import desai.portfolio.backend.exception.ResourceNotFoundException;
-import desai.portfolio.backend.repository.SkillRepository;
 import desai.portfolio.backend.repository.SubSkillRepository;
 import desai.portfolio.backend.service.SubSkillService;
 import org.modelmapper.ModelMapper;
