@@ -18,13 +18,10 @@ import java.util.List;
 public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long skill_id;
 
     @Column(nullable = false)
     private String name;
-
-    @OneToMany(mappedBy = "skill", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<SubSkill> subSkills;
 
     @Column(nullable = false)
     private Date date;

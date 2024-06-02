@@ -17,10 +17,10 @@ import java.util.stream.Collectors;
 @Service
 @AllArgsConstructor
 public class SkillServiceImpl implements SkillService {
+
     private SkillRepository skillRepository;
 
     private ModelMapper modelMapper;
-
 
     @Override
     public SkillDto addSkill(SkillDto skillDto) {
@@ -37,13 +37,12 @@ public class SkillServiceImpl implements SkillService {
     }
 
     @Override
-    public SkillDto updateSkill(SkillDto skillDto, Long id) {
+    public SkillDto updateSkill(SkillDto skillDto, Long skill_id) {
         LocalDate currentDate = LocalDate.now();
         Date now = Date.valueOf(currentDate);
-        Skill skill = skillRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Skill not found with ID : " + id));
+        Skill skill = skillRepository.findById(skill_id)
+                .orElseThrow(() -> new ResourceNotFoundException("Skill not found with ID : " + skill_id));
         skill.setName(skillDto.getName());
-        skill.setSubSkills(skillDto.getSubSkills());
         skill.setDate(now);
         Skill updateSkill = skillRepository.save(skill);
 
@@ -52,19 +51,19 @@ public class SkillServiceImpl implements SkillService {
 
 
     @Override
-    public SkillDto getSkill(Long id) {
-        Skill skill = skillRepository.findById(id)
+    public SkillDto getSkill(Long skill_id) {
+        Skill skill = skillRepository.findById(skill_id)
                 .orElseThrow(()->
-                        new ResourceNotFoundException("Skill not found with ID : "+ id));
+                        new ResourceNotFoundException("Skill not found with ID : "+ skill_id));
         return modelMapper.map(skill, SkillDto.class);
     }
 
     @Override
-    public void deleteSkill(Long id) {
-        Skill skill = skillRepository.findById(id)
+    public void deleteSkill(Long skill_id) {
+        Skill skill = skillRepository.findById(skill_id)
                 .orElseThrow(() ->
-                        new ResourceNotFoundException("Skill not found with ID : "+ id));
-        skillRepository.deleteById(id);
+                        new ResourceNotFoundException("Skill not found with ID : "+ skill_id));
+        skillRepository.deleteById(skill_id);
     }
 
     @Override

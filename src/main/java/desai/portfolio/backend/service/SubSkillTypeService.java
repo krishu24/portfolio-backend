@@ -8,11 +8,11 @@ public interface SubSkillTypeService {
 
     SubSkillTypeDto addSubSkillType(SubSkillTypeDto subSkillTypeDto);
 
-    SubSkillTypeDto updateSubSkillType(SubSkillTypeDto subSkillTypeDto, Long id);
+    SubSkillTypeDto updateSubSkillType(SubSkillTypeDto subSkillTypeDto, Long sub_skill_type_id);
 
-    SubSkillTypeDto getSubSkillType(Long id);
+    SubSkillTypeDto getSubSkillType(Long sub_skill_type_id);
 
-    void deleteSubSkillType(Long id);
+    void deleteSubSkillType(Long sub_skill_type_id);
 
     List<SubSkillTypeDto> getAllSubSkillTypes();
 }

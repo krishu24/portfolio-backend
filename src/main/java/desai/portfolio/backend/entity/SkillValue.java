@@ -14,7 +14,7 @@ import java.sql.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "skill_value")
-public class SkillValue extends SubSkillType{
+public class SkillValue {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,10 +22,6 @@ public class SkillValue extends SubSkillType{
 
     @Column(nullable = false)
     private String value;
-
-    @ManyToOne
-    @JoinColumn(name = "sub_skill_type_id")
-    private SubSkillType subSkillType;
 
     @Column(nullable = false)
     private Date date;

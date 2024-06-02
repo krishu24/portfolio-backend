@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @CrossOrigin("*")
+@AllArgsConstructor
 @RestController
 @RequestMapping("api/skill")
-@AllArgsConstructor
 public class SkillController {
 
     private SkillService skillService;
@@ -25,8 +25,8 @@ public class SkillController {
         return new ResponseEntity<>(savedSkill, HttpStatus.CREATED);
     }
 
-    @GetMapping("{id}")
-    public ResponseEntity<SkillDto> getSkill(@PathVariable("id") Long SkillId){
+    @GetMapping("/{skill_id}")
+    public ResponseEntity<SkillDto> getSkill(@PathVariable("skill_id") Long SkillId){
         SkillDto skillDto = skillService.getSkill(SkillId);
 
         return new ResponseEntity<>(skillDto, HttpStatus.OK);
@@ -39,16 +39,16 @@ public class SkillController {
         return ResponseEntity.ok(skills);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/{skill_id}")
     public ResponseEntity<SkillDto> updateSkill(@RequestBody SkillDto skillDto,
-                                                @PathVariable("id") Long skillId){
+                                                @PathVariable("skill_id") Long skillId){
         SkillDto updateSkill = skillService.updateSkill(skillDto,skillId);
 
         return ResponseEntity.ok(updateSkill);
     }
 
-    @DeleteMapping("{id}")
-    public ResponseEntity<String> deleteSkill(@PathVariable("id") Long skillId){
+    @DeleteMapping("/{skill_id}")
+    public ResponseEntity<String> deleteSkill(@PathVariable("skill_id") Long skillId){
         skillService.deleteSkill(skillId);
 
         return ResponseEntity.ok("Skill deleted successfully!");

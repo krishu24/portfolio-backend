@@ -5,13 +5,16 @@ import desai.portfolio.backend.entity.SubSkillType;
 import desai.portfolio.backend.exception.ResourceNotFoundException;
 import desai.portfolio.backend.repository.SubSkillTypeRepository;
 import desai.portfolio.backend.service.SubSkillTypeService;
+import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Service
+@AllArgsConstructor
 public class SubSkillTypeServiceImpl implements SubSkillTypeService {
 
     private SubSkillTypeRepository subSkillTypeRepository;
@@ -33,14 +36,12 @@ public class SubSkillTypeServiceImpl implements SubSkillTypeService {
     }
 
     @Override
-    public SubSkillTypeDto updateSubSkillType(SubSkillTypeDto subSkillTypeDto, Long id) {
+    public SubSkillTypeDto updateSubSkillType(SubSkillTypeDto subSkillTypeDto, Long sub_skill_type_id) {
         LocalDate currentDate = LocalDate.now();
         Date now = Date.valueOf(currentDate);
-        SubSkillType subSkillType = subSkillTypeRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("SubSkillType not found with ID : " + id));
+        SubSkillType subSkillType = subSkillTypeRepository.findById(sub_skill_type_id)
+                .orElseThrow(() -> new ResourceNotFoundException("SubSkillType not found with ID : " + sub_skill_type_id));
         subSkillType.setName(subSkillTypeDto.getName());
-        subSkillType.setSubSkill(subSkillTypeDto.getSubSkill());
-        subSkillType.setSkillValues(subSkillTypeDto.getSkillValues());
         subSkillType.setDate(now);
         SubSkillType updateSubSkillType = subSkillTypeRepository.save(subSkillType);
 
