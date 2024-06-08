@@ -21,8 +21,8 @@ public class Skill {
     private Long skill_id;
 
     @Column(nullable = false)
-    private String name;
+    private String skill_name;
 
     @Column(nullable = false)
-    private Date date;
+    private Date skill_date;
 }

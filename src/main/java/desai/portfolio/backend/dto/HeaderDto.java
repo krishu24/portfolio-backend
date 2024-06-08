@@ -11,9 +11,9 @@ import java.sql.Date;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class SkillDto {
+public class HeaderDto {
 
-    private Long skill_id;
-    private String skill_name;
-    private Date skill_date;
+    private Long h_id;
+    private String logo;
+    private Date h_date;
 }

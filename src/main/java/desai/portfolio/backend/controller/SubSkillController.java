@@ -48,10 +48,10 @@ public class SubSkillController {
     }
 
     @DeleteMapping("/{sub_skill_id}")
-    public ResponseEntity<String> deleteSubSkill(@PathVariable("sub_skill_id") Long skillId){
-        subSkillService.deleteSubSkill(skillId);
+    public ResponseEntity<String> deleteSubSkill(@PathVariable("sub_skill_id") Long subSkillId){
+        subSkillService.deleteSubSkill(subSkillId);
 
-        return ResponseEntity.ok("Skill deleted successfully!");
+        return ResponseEntity.ok("SubSkill deleted successfully!");
     }
 }
 

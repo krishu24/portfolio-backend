@@ -50,6 +50,6 @@ public class AboutController {
     public ResponseEntity<String> deleteAbout(@PathVariable("id") Long aboutId){
         aboutService.deleteAbout(aboutId);
 
-        return ResponseEntity.ok("Todo deleted successfully!");
+        return ResponseEntity.ok("About deleted successfully!");
     }
 }

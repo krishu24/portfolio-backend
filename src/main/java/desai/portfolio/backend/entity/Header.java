@@ -8,21 +8,21 @@ import lombok.Setter;
 
 import java.sql.Date;
 
-@Getter
 @Setter
+@Getter
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "skill_value")
-public class SkillValue {
+@Table(name = "header")
+public class Header {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long h_id;
 
     @Column(nullable = false)
-    private String value;
+    private String logo;
 
     @Column(nullable = false)
-    private Date date;
+    private Date h_date;
 }

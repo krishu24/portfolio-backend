@@ -11,9 +11,11 @@ import java.sql.Date;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class SkillValueDto {
+public class FooterDto {
 
-    private Long id;
-    private String value;
-    private Date date;
+    private Long f_id;
+    private String copyright_info;
+    private String privacy_policy;
+    private String terms;
+    private Date f_date;
 }

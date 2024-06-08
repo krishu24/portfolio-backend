@@ -14,7 +14,7 @@ import java.sql.Date;
 public class ExperienceDto {
 
     private Long exp_id;
-    private String name;
-    private String value;
-    private Date date;
+    private String exp_name;
+    private String exp_value;
+    private Date exp_date;
 }

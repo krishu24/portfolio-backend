@@ -11,9 +11,12 @@ import java.sql.Date;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class SkillDto {
+public class ContactDto {
 
-    private Long skill_id;
-    private String skill_name;
-    private Date skill_date;
+    private Long c_id;
+    private String address;
+    private String email;
+    private String github;
+    private String linkedin;
+    private Date c_date;
 }

@@ -13,10 +13,10 @@ import java.sql.Date;
 @NoArgsConstructor
 public class AboutDto {
 
-    private Long id;
-    private String name;
-    private String image;
-    private String profession_description;
-    private String motivation_description;
-    private Date date;
+    private Long about_id;
+    private String about_name;
+    private String about_image;
+    private String about_profession_description;
+    private String about_motivation_description;
+    private Date about_date;
 }

@@ -29,7 +29,7 @@ public class ExperienceServiceImpl implements ExperienceService {
     public ExperienceDto addExperience(ExperienceDto experienceDto) {
         LocalDate currentDate = LocalDate.now();
         Date now= Date.valueOf(currentDate);
-        experienceDto.setDate(now);
+        experienceDto.setExp_date(now);
         Experience experience = modelMapper.map(experienceDto, Experience.class);
 
         Experience savedExperience = experienceRepository.save(experience);
@@ -63,9 +63,9 @@ public class ExperienceServiceImpl implements ExperienceService {
         Date now= Date.valueOf(currentDate);
         Experience experience = experienceRepository.findById(exp_id)
                 .orElseThrow(() -> new ResourceNotFoundException("About not found with ID : "+ exp_id));
-        experience.setName(experienceDto.getName());
-        experience.setValue(experienceDto.getValue());
-        experience.setDate(now);
+        experience.setExp_name(experienceDto.getExp_name());
+        experience.setExp_value(experienceDto.getExp_value());
+        experience.setExp_date(now);
         Experience updateExperience = experienceRepository.save(experience);
 
         return modelMapper.map(updateExperience, ExperienceDto.class);

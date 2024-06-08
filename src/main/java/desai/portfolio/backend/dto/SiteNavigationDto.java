@@ -11,9 +11,10 @@ import java.sql.Date;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class SubSkillTypeDto {
+public class SiteNavigationDto {
 
-    private Long sub_skill_type_id;
-    private String name;
-    private Date date;
+    private Long page_id;
+    private String page_name;
+    private String page_link;
+    private Date page_date;
 }

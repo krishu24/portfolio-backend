@@ -21,11 +21,11 @@ public class Experience {
     private Long exp_id;
 
     @Column(nullable = false)
-    private String name;
+    private String exp_name;
 
     @Column(nullable = false)
-    private String value;
+    private String exp_value;
 
     @Column(nullable = false)
-    private Date date;
+    private Date exp_date;
 }

@@ -24,7 +24,7 @@ public class SubSkillServiceImpl implements SubSkillService {
     public SubSkillDto addSubSkill(SubSkillDto subSkillDto) {
         LocalDate currentDate = LocalDate.now();
         Date now= Date.valueOf(currentDate);
-        subSkillDto.setDate(now);
+        subSkillDto.setSub_skill_date(now);
         SubSkill subSkill = modelMapper.map(subSkillDto, SubSkill.class);
 
         SubSkill savedSubSkill = subSkillRepository.save(subSkill);
@@ -40,8 +40,10 @@ public class SubSkillServiceImpl implements SubSkillService {
         Date now = Date.valueOf(currentDate);
         SubSkill subSkill = subSkillRepository.findById(sub_skill_id)
                 .orElseThrow(() -> new ResourceNotFoundException("SubSkill not found with ID : " + sub_skill_id));
-        subSkill.setName(subSkillDto.getName());
-        subSkill.setDate(now);
+        subSkill.setSub_skill_name(subSkillDto.getSub_skill_name());
+        subSkill.setSub_skill_logo(subSkillDto.getSub_skill_logo());
+        subSkill.setSub_skill_link(subSkillDto.getSub_skill_link());
+        subSkill.setSub_skill_date(now);
         SubSkill updateSubSkill = subSkillRepository.save(subSkill);
 
         return modelMapper.map(updateSubSkill, SubSkillDto.class);

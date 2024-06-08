@@ -7,28 +7,28 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Date;
-import java.util.List;
-@Getter
+
 @Setter
+@Getter
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "sub_skill")
-public class SubSkill {
+@Table(name = "footer")
+public class Footer {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long sub_skill_id;
+    private Long f_id;
 
     @Column(nullable = false)
-    private String sub_skill_name;
+    private String copyright_info;
 
     @Column(nullable = false)
-    private String sub_skill_logo;
+    private String privacy_policy;
 
     @Column(nullable = false)
-    private String sub_skill_link;
+    private String terms;
 
     @Column(nullable = false)
-    private Date sub_skill_date;
-
+    private Date f_date;
 }

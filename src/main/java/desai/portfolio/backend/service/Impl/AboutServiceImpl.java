@@ -26,7 +26,7 @@ public class AboutServiceImpl implements AboutService {
     public AboutDto addAbout(AboutDto aboutDto) {
         LocalDate currentDate = LocalDate.now();
         Date now= Date.valueOf(currentDate);
-        aboutDto.setDate(now);
+        aboutDto.setAbout_date(now);
         About about = modelMapper.map(aboutDto, About.class);
 
         About savedAbout = aboutRepository.save(about);
@@ -60,11 +60,11 @@ public class AboutServiceImpl implements AboutService {
         Date now= Date.valueOf(currentDate);
         About about = aboutRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("About not found with ID : "+ id));
-        about.setName(aboutDto.getName());
-        about.setImage(aboutDto.getImage());
-        about.setProfession_description(aboutDto.getProfession_description());
-        about.setMotivation_description(aboutDto.getMotivation_description());
-        about.setDate(now);
+        about.setAbout_name(aboutDto.getAbout_name());
+        about.setAbout_image(aboutDto.getAbout_image());
+        about.setAbout_profession_description(aboutDto.getAbout_profession_description());
+        about.setAbout_motivation_description(aboutDto.getAbout_motivation_description());
+        about.setAbout_date(now);
         About updateAbout = aboutRepository.save(about);
 
         return modelMapper.map(updateAbout, AboutDto.class);

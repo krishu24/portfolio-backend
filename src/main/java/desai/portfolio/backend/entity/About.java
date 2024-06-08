@@ -18,20 +18,20 @@ public class About {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long about_id;
 
     @Column(nullable = false)
-    private String name;
+    private String about_name;
 
     @Column(nullable = false)
-    private String image;
+    private String about_image;
 
     @Column(nullable = false)
-    private String profession_description;
+    private String about_profession_description;
 
     @Column(nullable = false)
-    private String motivation_description;
+    private String about_motivation_description;
 
     @Column(nullable = false)
-    private Date date;
+    private Date about_date;
 }

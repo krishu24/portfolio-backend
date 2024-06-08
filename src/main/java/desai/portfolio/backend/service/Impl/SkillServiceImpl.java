@@ -26,7 +26,7 @@ public class SkillServiceImpl implements SkillService {
     public SkillDto addSkill(SkillDto skillDto) {
         LocalDate currentDate = LocalDate.now();
         Date now= Date.valueOf(currentDate);
-        skillDto.setDate(now);
+        skillDto.setSkill_date(now);
         Skill skill = modelMapper.map(skillDto, Skill.class);
 
         Skill savedSkill = skillRepository.save(skill);
@@ -42,8 +42,8 @@ public class SkillServiceImpl implements SkillService {
         Date now = Date.valueOf(currentDate);
         Skill skill = skillRepository.findById(skill_id)
                 .orElseThrow(() -> new ResourceNotFoundException("Skill not found with ID : " + skill_id));
-        skill.setName(skillDto.getName());
-        skill.setDate(now);
+        skill.setSkill_name(skillDto.getSkill_name());
+        skill.setSkill_date(now);
         Skill updateSkill = skillRepository.save(skill);
 
         return modelMapper.map(updateSkill, SkillDto.class);

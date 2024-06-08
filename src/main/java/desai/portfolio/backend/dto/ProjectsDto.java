@@ -11,9 +11,12 @@ import java.sql.Date;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class SkillDto {
+public class ProjectsDto {
 
-    private Long skill_id;
-    private String skill_name;
-    private Date skill_date;
+    private Long proj_id;
+    private String proj_name;
+    private String proj_short_description;
+    private String proj_full_description;
+    private String proj_link;
+    private Date date;
 }
